@@ -14,21 +14,18 @@ def inputty1():
         num2=float(input("Enter a number: "))
         if user_input == "add":
             result=str(num1+num2)
-            print("I think you want to see " + result)
         elif user_input == "subtract":
             result=str(num1-num2)
-            print("I think you want to see " + result)
         elif user_input == "multiply":
             result=str(num1*num2)
-            print("I think you want to see " + result)
         elif user_input == "divide":
             try:
                 result=str(num1/num2)
-                print("I think you want to see " + result)
             except ZeroDivisionError:
                 print("Are you kidding? My school teacher told me it isn't possible to divide on zero")
     except ValueError:
         print("You are stupid little girl! This calculator only for numbers!")
+    print("I think you want to see " + result)
     
 while True:    
     user_input=input("What do you want? ")
