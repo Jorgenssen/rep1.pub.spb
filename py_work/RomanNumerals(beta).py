@@ -1,3 +1,44 @@
+def milia(arabnum):
+    global mil
+    if (arabnum // 1000) == 0:
+        mil = 0
+    elif (arabnum // 1000) == 1:
+        mil = 1
+    elif (arabnum // 1000) == 2:
+        mil = 2
+    elif (arabnum // 1000) == 3:
+        mil = 3
+    return(mil)
+
+def centum(arabnum):
+    global mil
+    global cent
+    if (arabnum > 99):
+        cent = 0
+    if (mil == 0):
+        cent = (arabnum / 100)
+    elif (mil == 1):
+        cent = ((arabnum - 1000) / 100)
+    elif (mil == 2):
+        cent = ((arabnum - 2000) / 100)
+    elif (mil == 3):
+        cent = ((arabnum - 3000) / 100)
+    return(cent)
+    
+def decem(arabnum):
+    global mil
+    global cent
+    global dec
+    if (mil == 0):
+        dec = (arabnum - cent * 100
+    elif (mil == 1):
+        dec = ((arabnum - 1000) - cent * 100
+    elif (mil == 2):
+        dec = ((arabnum - 2000) - cent * 100
+    elif (mil == 3):
+        dec = ((arabnum - 3000) - cent * 100
+    return(dec)
+
 def pre(arabnum):
     global pres
     if ((arabnum // 5) < 1):
@@ -24,6 +65,7 @@ def pre(arabnum):
         pres = 11
     elif ((arabnum // 1000) >= 1):
         pres = 12
+
     else:
         print('nope')
     return(pres)
@@ -63,8 +105,12 @@ def romannum(arabnum):
 arabnum = int(input('Введите число '))
 result = 'a'
 pres = 0
+mil = x
+cent = y
+dec = z
 if (0 < arabnum < 4000):
-    pre(arabnum)
+    thou(arabnum)
+    dec(arabnum)
     romannum(arabnum)
     print(result)
     print(pres)
