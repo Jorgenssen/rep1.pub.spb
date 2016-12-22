@@ -45,7 +45,7 @@ def romannumDec(arabnum):
         elif ((arabnum - mil * 1000 - cent * 100 - dec * 10) == 4):
             resultDec = 'IV'
         elif (5 <= (arabnum - mil * 1000 - cent * 100 - dec * 10) <= 8):
-            resultDec = 'V' + 'I' * (-(5 - arabnum))
+            resultDec = 'V' + 'I' * (-(5 - (arabnum - mil * 1000 - cent * 100 - dec * 10)))
         elif ((arabnum - mil * 1000 - cent * 100 - dec * 10) == 9):
             resultDec = 'IX'
     elif (dec in (1, 2, 3)):
@@ -54,7 +54,7 @@ def romannumDec(arabnum):
         elif ((arabnum - mil * 1000 - cent * 100 - dec * 10) == 4):
             resultDec = 'X' * dec + 'IV'
         elif (5 <= (arabnum - mil * 1000 - cent * 100 - dec * 10) <= 8):
-            resultDec = 'X' + 'V' + 'I' * (-(5 - (arabnum - mil * 1000 - cent * 100 - dec * 10)))
+            resultDec = 'X' * dec + 'V' + 'I' * (-(5 - (arabnum - mil * 1000 - cent * 100 - dec * 10)))
         elif ((arabnum - mil * 1000 - cent * 100 - dec * 10) == 9):
             resultDec = 'X' * dec + 'IX'
     elif (dec == 4):
@@ -72,7 +72,7 @@ def romannumDec(arabnum):
         elif ((arabnum - mil * 1000 - cent * 100 - dec * 10) == 4):
             resultDec = 'L' + 'X' * (dec - 5) + 'IV'
         elif (5 <= (arabnum - mil * 1000 - cent * 100 - dec * 10) <= 8):
-            resultDec = 'L' + 'V' + 'I' * (-(5 - (arabnum - mil * 1000 - cent * 100 - dec * 10)))
+            resultDec = 'L' + 'X' * (dec - 5) + 'V' + 'I' * (-(5 - (arabnum - mil * 1000 - cent * 100 - dec * 10)))
         elif ((arabnum - mil * 1000 - cent * 100 - dec * 10) == 9):
             resultDec = 'L' + 'X' * (dec - 5) + 'IX'
     elif (dec == 9):
@@ -104,7 +104,7 @@ def romannumCent(arabnum):
     elif (cent == 5):
         resultCent = 'D' + resultDec
     elif (cent in (6, 7, 8)):
-        resultCent = 'D'+'C' * (dec - 5) + resultDec
+        resultCent = 'D'+'C' * (cent - 5) + resultDec
     elif (cent == 9):
         resultCent = 'CM' + resultDec
     elif (cent == 10):
