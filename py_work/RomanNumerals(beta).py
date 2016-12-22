@@ -124,10 +124,7 @@ def romannumMil(arabnum):
     return(resultMil)
 
 arabnum = int(input('Введите число '))
-#result = 'a'
-#mil = 'x'
-#cent = 'y'
-#dec = 'z'
+
 if (0 < arabnum < 4000):
     milia(arabnum)
     centum(arabnum)
