@@ -133,7 +133,5 @@ if (0 < arabnum < 4000):
     romannumCent(arabnum)
     romannumMil(arabnum)
     print(resultMil)
-    print('3999 = MMMCMXCIX')
-    print(resultDec)
 else:
     print('Out of conditions')
