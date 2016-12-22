@@ -39,50 +39,52 @@ def romannumDec(arabnum):
     global dec
     global resultDec
 
+    unitates = (arabnum - mil * 1000 - cent * 100 - dec * 10)
+
     if (dec == 0) and (dec != 10):
-        if (0 <= (arabnum - mil * 1000 - cent * 100 - dec * 10) <= 3):
-            resultDec = 'I' * (arabnum - mil * 1000 - cent * 100 - dec * 10)
-        elif ((arabnum - mil * 1000 - cent * 100 - dec * 10) == 4):
+        if (0 <= unitates <= 3):
+            resultDec = 'I' * unitates
+        elif (unitates == 4):
             resultDec = 'IV'
-        elif (5 <= (arabnum - mil * 1000 - cent * 100 - dec * 10) <= 8):
-            resultDec = 'V' + 'I' * (-(5 - (arabnum - mil * 1000 - cent * 100 - dec * 10)))
-        elif ((arabnum - mil * 1000 - cent * 100 - dec * 10) == 9):
+        elif (5 <= unitates <= 8):
+            resultDec = 'V' + 'I' * (-(5 - unitates))
+        elif (unitates == 9):
             resultDec = 'IX'
     elif (dec in (1, 2, 3)):
-        if (0 <= (arabnum - mil * 1000 - cent * 100 - dec * 10) <= 3):
-            resultDec = 'X' * dec + 'I' * (-(0 - (arabnum - mil * 1000 - cent * 100 - dec * 10)))
-        elif ((arabnum - mil * 1000 - cent * 100 - dec * 10) == 4):
+        if (0 <= unitates <= 3):
+            resultDec = 'X' * dec + 'I' * (-(0 - unitates))
+        elif (unitates == 4):
             resultDec = 'X' * dec + 'IV'
-        elif (5 <= (arabnum - mil * 1000 - cent * 100 - dec * 10) <= 8):
-            resultDec = 'X' * dec + 'V' + 'I' * (-(5 - (arabnum - mil * 1000 - cent * 100 - dec * 10)))
-        elif ((arabnum - mil * 1000 - cent * 100 - dec * 10) == 9):
+        elif (5 <= unitates <= 8):
+            resultDec = 'X' * dec + 'V' + 'I' * (-(5 - unitates))
+        elif (unitates == 9):
             resultDec = 'X' * dec + 'IX'
     elif (dec == 4):
-        if (0 <= (arabnum - mil * 1000 - cent * 100 - dec * 10) <= 3):
-            resultDec = 'XL' + 'I' * (-(0 - (arabnum - mil * 1000 - cent * 100 - dec * 10)))
-        elif ((arabnum - mil * 1000 - cent * 100 - dec * 10) == 4):
+        if (0 <= unitates <= 3):
+            resultDec = 'XL' + 'I' * (-(0 - unitates))
+        elif (unitates == 4):
             resultDec = 'XL' + 'IV'
-        elif (5 <= (arabnum - mil * 1000 - cent * 100 - dec * 10) <= 8):
-            resultDec = 'XL' + 'V' + 'I' * (-(5 - (arabnum - mil * 1000 - cent * 100 - dec * 10)))
-        elif ((arabnum - mil * 1000 - cent * 100 - dec * 10) == 9):
+        elif (5 <= unitates <= 8):
+            resultDec = 'XL' + 'V' + 'I' * (-(5 - unitates))
+        elif (unitates == 9):
             resultDec = 'XL' + 'IX'
     elif (dec in (5, 6, 7, 8)):
-        if (0 <= (arabnum - mil * 1000 - cent * 100 - dec * 10) <= 3):
-            resultDec = 'L' + 'X' * (dec - 5) + 'I' * (-(0 - (arabnum - mil * 1000 - cent * 100 - dec * 10)))
+        if (0 <= unitates <= 3):
+            resultDec = 'L' + 'X' * (dec - 5) + 'I' * (-(0 - unitates))
         elif ((arabnum - mil * 1000 - cent * 100 - dec * 10) == 4):
             resultDec = 'L' + 'X' * (dec - 5) + 'IV'
-        elif (5 <= (arabnum - mil * 1000 - cent * 100 - dec * 10) <= 8):
-            resultDec = 'L' + 'X' * (dec - 5) + 'V' + 'I' * (-(5 - (arabnum - mil * 1000 - cent * 100 - dec * 10)))
-        elif ((arabnum - mil * 1000 - cent * 100 - dec * 10) == 9):
+        elif (5 <= unitates <= 8):
+            resultDec = 'L' + 'X' * (dec - 5) + 'V' + 'I' * (-(5 - unitates))
+        elif (unitates == 9):
             resultDec = 'L' + 'X' * (dec - 5) + 'IX'
     elif (dec == 9):
-        if (0 <= (arabnum - mil * 1000 - cent * 100 - dec * 10) <= 3):
-            resultDec = 'XC' + 'I' * (-(0 - (arabnum - mil * 1000 - cent * 100 - dec * 10)))
-        elif ((arabnum - mil * 1000 - cent * 100 - dec * 10) == 4):
+        if (0 <= unitates <= 3):
+            resultDec = 'XC' + 'I' * (-(0 - unitates))
+        elif (unitates == 4):
             resultDec = 'XC' + 'IV'
-        elif (5 <= (arabnum - mil * 1000 - cent * 100 - dec * 10) <= 8):
-            resultDec = 'XC' + 'V' + 'I' * (-(5 - (arabnum - mil * 1000 - cent * 100 - dec * 10)))
-        elif ((arabnum - mil * 1000 - cent * 100 - dec * 10) == 9):
+        elif (5 <= unitates <= 8):
+            resultDec = 'XC' + 'V' + 'I' * (-(5 - unitates))
+        elif (unitates == 9):
             resultDec = 'XC' + 'IX'
     elif (dec == 10):
         resultDec = ''
