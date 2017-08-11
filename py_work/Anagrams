@@ -1,0 +1,42 @@
+#Anagrams
+
+import random
+
+#base of words
+WORDS = ("python", "anagram", "telegram", "facebook", "answer", "gedik" , "dxcore", "devexperts")
+
+#select random word
+word = random.choice(WORDS)
+correct = word
+
+#creating of jumble
+jumble = ""
+
+while word:
+    position = random.randrange(len(word))
+    jumble += word[position]
+    word = word[:position] + word[(position + 1):]
+
+#so, the game
+print("""
+Hello, you are welcome to mind game!
+Try to construct the correct word.
+""")
+
+points = len(correct)
+attempt = 0
+
+print("So, there is a jumble: ", jumble, "\n(If you have no idea just press the Enter to get a hint.)")
+guess = input("\nAnd your guess? ")
+
+while guess != correct:
+    print("No-no-no, it's not")
+    if guess == "" and attempt != len(correct):
+        print("So the ", attempt + 1, "letter is: ", correct[attempt])
+        attempt += 1
+        points -= 1
+    guess = input("And your guess again? ")
+
+if guess == correct:
+    print("Yep, that's right! You've got ", points, "points. \nThank you!")
+    input("\n\nPress Enter to exit")
