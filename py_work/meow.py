@@ -1,4 +1,5 @@
 #script for CatTimes
+#modified for test
 
 stairs = ['thud', 'meow', 'thud', 'hiss']
 def edit_story(words, func):
